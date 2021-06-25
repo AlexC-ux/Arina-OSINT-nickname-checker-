@@ -1,0 +1,13 @@
+C:\Users\AlexC-ux\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\Arina.exe
+C:\Users\AlexC-ux\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\Arina.deps.json
+C:\Users\AlexC-ux\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\Arina.runtimeconfig.json
+C:\Users\AlexC-ux\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\Arina.runtimeconfig.dev.json
+C:\Users\AlexC-ux\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\Arina.dll
+C:\Users\AlexC-ux\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\Arina.pdb
+C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\Arina.csproj.AssemblyReference.cache
+C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\Arina.AssemblyInfoInputs.cache
+C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\Arina.AssemblyInfo.cs
+C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\Arina.csproj.CoreCompileInputs.cache
+C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\Arina.dll
+C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\Arina.pdb
+C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\Arina.genruntimeconfig.cache

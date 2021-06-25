@@ -1,0 +1,5 @@
+C:\Users\AlexC-ux\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\publish\Arina
+C:\Users\AlexC-ux\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\publish\Arina.dll
+C:\Users\AlexC-ux\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\publish\Arina.deps.json
+C:\Users\AlexC-ux\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\publish\Arina.runtimeconfig.json
+C:\Users\AlexC-ux\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\publish\Arina.pdb

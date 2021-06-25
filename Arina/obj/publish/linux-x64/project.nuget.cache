@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "m6nGaDdt6VkcwrnzI6PgTM0HTXdpjzX2aANU+jbF+kV2UH9XQ7/RYfwRVeTqMolTtsSlYP9klgBCl8g/nyTCTA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\AlexC-ux\\source\\repos\\Arina\\Arina\\Arina.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\AlexC-ux\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\3.1.16\\microsoft.netcore.app.host.linux-x64.3.1.16.nupkg.sha512"
+  ],
+  "logs": []
+}
