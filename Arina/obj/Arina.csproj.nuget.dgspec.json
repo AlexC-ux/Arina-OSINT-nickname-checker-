@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AlexC-ux\\source\\repos\\Arina\\Arina\\Arina.csproj": {}
+    "C:\\Users\\AlexC-ux\\Source\\Repos\\Arina\\Arina\\Arina.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AlexC-ux\\source\\repos\\Arina\\Arina\\Arina.csproj": {
+    "C:\\Users\\AlexC-ux\\Source\\Repos\\Arina\\Arina\\Arina.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AlexC-ux\\source\\repos\\Arina\\Arina\\Arina.csproj",
+        "projectUniqueName": "C:\\Users\\AlexC-ux\\Source\\Repos\\Arina\\Arina\\Arina.csproj",
         "projectName": "Arina",
-        "projectPath": "C:\\Users\\AlexC-ux\\source\\repos\\Arina\\Arina\\Arina.csproj",
+        "projectPath": "C:\\Users\\AlexC-ux\\Source\\Repos\\Arina\\Arina\\Arina.csproj",
         "packagesPath": "C:\\Users\\AlexC-ux\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AlexC-ux\\source\\repos\\Arina\\Arina\\obj\\",
+        "outputPath": "C:\\Users\\AlexC-ux\\Source\\Repos\\Arina\\Arina\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

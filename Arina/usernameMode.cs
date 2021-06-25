@@ -18,6 +18,11 @@ namespace Arina
             tg_username.Check(username);
             blogger_username.Check(username);
             reddit_username.Check(username);
+            vk_username.Check(username);
+
+
+
+
 
 
             Console.WriteLine("Completed!");
@@ -131,15 +136,15 @@ namespace Arina
         {
             try
             {
-                string url = $"https://www.reddit.com/user/{username}";
+                string url = $"https://m.vk.com/{username}";
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 if (response.StatusCode == HttpStatusCode.NotFound)
                 {
-                    Console.WriteLine("[-] Reddit : NOT FOUND");
+                    Console.WriteLine("[-] VK : NOT FOUND");
                 }
-                else { Console.WriteLine($"[+] Reddit : https://www.reddit.com/user/{username}"); }
+                else { Console.WriteLine($"[+] VK : https://vk.com/{username}"); }
             }
             catch { }
         }
