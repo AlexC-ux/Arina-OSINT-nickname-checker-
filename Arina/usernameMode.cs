@@ -10,18 +10,20 @@ namespace Arina
     {
         static public void Start(string username)
         {
-            Console.WriteLine("Loading...");
+            Console.WriteLine("\nProfiles:");
             
             
             github_username.Check(username);
             twitter_username.Check(username);
             tg_username.Check(username);
+            akniga_username.Check(username);
             blogger_username.Check(username);
             reddit_username.Check(username);
             vk_username.Check(username);
 
-
-
+            Console.WriteLine("\nSearch engines:");
+            webarch_username.Check(username);
+            archive_is_username.Check(username);
 
 
 
@@ -122,11 +124,19 @@ namespace Arina
         }
     }
 
-    class webarch_login
+    class webarch_username
     {
         public static void Check(string username)
         {
             Console.WriteLine($"[+] WebArchive : https://google.com/?q=site:https://web.archive.org/web/+intext:{username}");
+        }
+    }
+
+    class archive_is_username
+    {
+        public static void Check(string username)
+        {
+            Console.WriteLine($"[+] ArchiveIs : http://archive.is/search/?text={username}");
         }
     }
 
@@ -147,6 +157,30 @@ namespace Arina
                 else { Console.WriteLine($"[+] VK : https://vk.com/{username}"); }
             }
             catch { }
+        }
+    }
+
+    class akniga_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"http://akniga.org/profile/{username}/";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] Akniga : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] Akniga : akniga.org/profile/{username}/"); }
+            }
+            catch { Console.WriteLine("[-] Akniga : NOT FOUND"); }
+            
+
+
+
         }
     }
 }
