@@ -29,7 +29,7 @@ An open source intelligence tool to find info about your old pages.
 - [ ] LinkedIn
 - [x] Patreon
 - [ ] Roblox
-- [ ] SoundCloud
+- [x] SoundCloud
 - [ ] Wikipedia
 - [ ] About.Me
 - [ ] BaseCamp
