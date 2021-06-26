@@ -296,25 +296,6 @@ namespace Arina
         }
     }
 
-    class ya_musix_username
-    {
-        public static void Check(string username)
-        {
-            try
-            {
-                string url = $"https://music.yandex.ru/users/{username}/playlists";
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                if (response.StatusCode == HttpStatusCode.NotFound)
-                {
-                    Console.WriteLine("[-] YandexMusic : NOT FOUND");
-                }
-                else { Console.WriteLine($"[+] YandexMusic : https://music.yandex.ru/users/{username}/playlists"); }
-            }
-            catch { Console.WriteLine("[-] YandexMusic : NOT FOUND"); }
-        }
-    }
 
 
     #endregion
