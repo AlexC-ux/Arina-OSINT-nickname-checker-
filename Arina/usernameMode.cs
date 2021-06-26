@@ -49,6 +49,7 @@ namespace Arina
             pikabu_username.Check(username);
             vk_username.Check(username);
             pinterest_username.Check(username);
+            twitch_username.Check(username);
             yt_username.Check(username);
             fb_username.Check(username);
             habr_username.Check(username);
