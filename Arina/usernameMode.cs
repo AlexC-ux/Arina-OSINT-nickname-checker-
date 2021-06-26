@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Net;
-
+using System.Web;
 namespace Arina
 {
 
@@ -55,8 +55,8 @@ namespace Arina
             spotif_username.Check(username);
             ya_music_username.Check(username);
             ebay_username.Check(username);
-            ph_userame.Check(username);
             pp_username.Check(username);
+            ph_userame.Check(username);
             archive_is_username.Check(username);
 
 
@@ -428,17 +428,20 @@ namespace Arina
         {
             try
             {
+                
+                
                 string url = $"https://www.paypal.com/paypalme/{username}";
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                if (response.StatusCode == HttpStatusCode.NotFound)
+                WebClient wc = new WebClient();
+
+                wc.Headers.Add("User-Agent", "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36");
+                string response = wc.DownloadString(url);
+                if (!response.Contains($"PayPal.me/{username}"))
                 {
                     Console.WriteLine("[-] PayPal : NOT FOUND");
                 }
                 else { Console.WriteLine($"[+] PayPal : https://www.paypal.com/paypalme/{username}"); }
             }
-            catch { Console.WriteLine("[-] PayPal : NOT FOUND"); }
+            catch (Exception ex){ Console.WriteLine(ex.ToString()); }
         }
     }
 
