@@ -7,6 +7,7 @@ namespace Arina
     {
         static void Main(string[] args)
         {
+            
             Console.Title = "Arina checker";
             Console.WriteLine("Select mode:\n            1 - username");
             Console.WriteLine("            \n            2 - usernames list (.txt)");

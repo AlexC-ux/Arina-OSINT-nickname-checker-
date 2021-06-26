@@ -5,11 +5,14 @@ namespace Arina
 {
     class usernameMode
     {
+        public static string proxyAddr = "";
         static public void Start(string username)
         {
+            
             Console.WriteLine($"\nProfiles of {username}:");
             if (username.Contains(" "))
             {
+                
                 string[] parts = username.Split(" ");
                 Console.WriteLine("Username contains space, which separator to use? (_|.|none|another character)");
                 string sep = Console.ReadLine();
@@ -42,6 +45,7 @@ namespace Arina
             akniga_username.Check(username);
             blogger_username.Check(username);
             reddit_username.Check(username);
+            pikabu_username.Check(username);
             vk_username.Check(username);
             pinterest_username.Check(username);
             yt_username.Check(username);
@@ -188,6 +192,26 @@ namespace Arina
         }
     }
 
+    class pikabu_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"http://pikabu.ru/@{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] Pikabu : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] Pikabu : http://pikabu.ru/@{username}"); }
+            }
+            catch { Console.WriteLine("[-] Pikabu : NOT FOUND"); }
+        }
+    }
+
     class akniga_username
     {
         public static void Check(string username)
@@ -257,7 +281,7 @@ namespace Arina
             try
             {
                 string url = $"https://www.facebook.com/{username}";
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);           
                 request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 if (response.StatusCode == HttpStatusCode.NotFound)
