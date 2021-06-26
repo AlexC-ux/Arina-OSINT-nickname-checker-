@@ -360,7 +360,26 @@ namespace Arina
         }
     }
 
-
+    class twitch_username
+    {
+        //
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://m.twitch.tv/{username}?desktop-redirect=true";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] Twitch : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] Twitch : https://m.twitch.tv/{username}"); }
+            }
+            catch { Console.WriteLine("[-] Twitch : NOT FOUND"); }
+        }
+    }
 
 
 
