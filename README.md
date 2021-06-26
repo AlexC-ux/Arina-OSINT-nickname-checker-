@@ -14,9 +14,9 @@ An open source intelligence tool to find info about your old pages.
 - Pikabu
 - Archive.is
 - WebArchive
-- [ ] YandexMusic
-- [ ] Spotify
-- [ ] Habr
+- YandexMusic
+- Spotify
+- Habr
 - [ ] Another
 
 # Install info
