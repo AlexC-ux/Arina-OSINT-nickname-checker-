@@ -7,6 +7,7 @@ An open source intelligence tool to find info about your old pages.
 - Pinterest
 - YouTube
 - Telegram
+- Facebook
 - Akniga
 - Blogger
 - Reddit
@@ -16,8 +17,23 @@ An open source intelligence tool to find info about your old pages.
 - YandexMusic
 - Spotify
 - Habr
-- [x] Twitch
-- [ ] another
+- Twitch
+- TikTok
+- Ebay
+- PayPal
+- PornHub
+- [ ] Instagram
+- [ ] fix Telegram
+- [ ] Badoo
+- [ ] Tinder
+- [ ] LinkedIn
+- [ ] Patreon
+- [ ] Roblox
+- [ ] SoundCloud
+- [ ] Wikipedia
+- [ ] About.Me
+- [ ] BaseCamp
+- [ ] Another
 
 # Install info
 **Dependencies:**
