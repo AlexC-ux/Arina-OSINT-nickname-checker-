@@ -10,3 +10,4 @@ C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\A
 C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\Arina.dll
 C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\Arina.pdb
 C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\Arina.genruntimeconfig.cache
+C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\Arina.csproj.AssemblyReference.cache

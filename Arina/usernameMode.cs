@@ -49,6 +49,7 @@ namespace Arina
             pikabu_username.Check(username);
             vk_username.Check(username);
             pinterest_username.Check(username);
+            twitch_username.Check(username);
             yt_username.Check(username);
             fb_username.Check(username);
             habr_username.Check(username);
@@ -360,7 +361,28 @@ namespace Arina
         }
     }
 
-
+    class twitch_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://m.twitch.tv/{username}?desktop-redirect=true";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                
+                request.Method = "GET";
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    Console.WriteLine($"[+] Twitch : https://www.twitch.tv/{username}");
+                    
+                }
+                else { Console.WriteLine("[-] Twitch : NOT FOUND"); }
+            }
+            catch { Console.WriteLine("[-] Twitch : NOT FOUND"); }
+        }
+    }
 
 
 
