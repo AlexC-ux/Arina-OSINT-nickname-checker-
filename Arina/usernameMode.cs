@@ -39,6 +39,7 @@ namespace Arina
                 Console.WriteLine("Username: " + username);
             }
 
+            
             github_username.Check(username);
             tg_username.Check(username);
             akniga_username.Check(username);
@@ -52,6 +53,7 @@ namespace Arina
             yt_username.Check(username);
             fb_username.Check(username);
             habr_username.Check(username);
+            patreon_username.Check(username);
             spotif_username.Check(username);
             ya_music_username.Check(username);
             ebay_username.Check(username);
@@ -441,10 +443,29 @@ namespace Arina
                 }
                 else { Console.WriteLine($"[+] PayPal : https://www.paypal.com/paypalme/{username}"); }
             }
-            catch (Exception ex){ Console.WriteLine(ex.ToString()); }
+            catch { Console.WriteLine("[-] PayPal : NOT FOUND"); }
         }
     }
 
+    class patreon_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://www.patreon.com/{username}/creators";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla/5.0 (Linux; Android 9; Pixel 2 XL Build/PPP3.180510.008) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Mobile Safari/537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] Patreon : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] Patreon : https://www.patreon.com/{username}/creators"); }
+            }
+            catch { Console.WriteLine("[-] Patreon : NOT FOUND"); }
+        }
+    }
 
 
 
