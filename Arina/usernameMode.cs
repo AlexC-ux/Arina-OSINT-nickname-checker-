@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Net;
-using System.IO;
 
 namespace Arina
 {
@@ -11,8 +8,34 @@ namespace Arina
         static public void Start(string username)
         {
             Console.WriteLine("\nProfiles:");
-            
-            
+            if (username.Contains(" "))
+            {
+                string[] parts = username.Split(" ");
+                Console.WriteLine("Username contains space, which separator to use? (_|.|none|another character)");
+                string sep = Console.ReadLine();
+                //Заполнение пробелов
+                username = "";
+                int i = 0;
+                if (i + 2 == parts.Length)
+                {
+                    username += parts[i] + sep + parts[i + 1];
+                    Console.WriteLine(username);
+                }
+                for (i = 0; i < parts.Length - 2; i++)
+                {
+                    username += parts[i] + sep;
+
+
+                    if (i + 1 >= parts.Length - 2)
+                    {
+                        username += parts[i + 1] + sep + parts[i + 2];
+                    }
+
+                }
+
+                Console.WriteLine("Username: " + username);
+            }
+
             github_username.Check(username);
             twitter_username.Check(username);
             tg_username.Check(username);
@@ -20,6 +43,9 @@ namespace Arina
             blogger_username.Check(username);
             reddit_username.Check(username);
             vk_username.Check(username);
+            pinterest_username.Check(username);
+            yt_username.Check(username);
+
 
             Console.WriteLine("\nSearch engines:");
             webarch_username.Check(username);
@@ -27,7 +53,7 @@ namespace Arina
 
 
 
-            Console.WriteLine("Completed!");
+
         }
     }
 
@@ -59,7 +85,7 @@ namespace Arina
             {
                 Console.WriteLine($"[+] Twitter : https://web.archive.org/web/2020*/twitter.com/{username}");
             }
-            catch (Exception ex){ Console.WriteLine(ex.ToString()); }
+            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
         }
     }
 
@@ -79,8 +105,8 @@ namespace Arina
                 }
                 else { Console.WriteLine($"[+] Telegram : https://t.me/{username}"); }
             }
-            catch { }
-            
+            catch { Console.WriteLine("[-] Telegram : NOT FOUND"); }
+
         }
     }
 
@@ -100,7 +126,7 @@ namespace Arina
                 }
                 else { Console.WriteLine($"[+] Blogger : http://{username}.blogspot.com"); }
             }
-            catch { }
+            catch { Console.WriteLine("[-] Blogger : NOT FOUND"); }
         }
     }
 
@@ -120,7 +146,7 @@ namespace Arina
                 }
                 else { Console.WriteLine($"[+] Reddit : https://www.reddit.com/user/{username}"); }
             }
-            catch { }
+            catch { Console.WriteLine("[-] Reddit : NOT FOUND"); }
         }
     }
 
@@ -174,13 +200,51 @@ namespace Arina
                 {
                     Console.WriteLine("[-] Akniga : NOT FOUND");
                 }
-                else { Console.WriteLine($"[+] Akniga : akniga.org/profile/{username}/"); }
+                else { Console.WriteLine($"[+] Akniga : http://akniga.org/profile/{username}/"); }
             }
             catch { Console.WriteLine("[-] Akniga : NOT FOUND"); }
-            
+        }
+    }
 
 
+    class pinterest_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://www.pinterest.com/{username}/_saved/";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode != HttpStatusCode.OK)
+                {
+                    Console.WriteLine("[-] Pinterest : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] Pinterest : https://www.pinterest.com/{username}/_saved/"); }
+            }
+            catch { Console.WriteLine("[-] Pinterest : NOT FOUND"); }
+        }
+    }
 
+
+    class yt_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://www.youtube.com/user/{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode != HttpStatusCode.OK)
+                {
+                    Console.WriteLine("[-] YouTube : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] YouTube : https://www.youtube.com/user/{username}"); }
+            }
+            catch { Console.WriteLine("[-] YouTube : NOT FOUND"); }
         }
     }
 }
