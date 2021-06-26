@@ -316,6 +316,36 @@ namespace Arina
         }
     }
 
+    class spotif_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://open.spotify.com/user/{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] Spotify : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] Spotify : https://open.spotify.com/user/{username}"); }
+            }
+            catch { Console.WriteLine("[-] Spotify : NOT FOUND"); }
+        }
+    }
+
+
+    class habr_username
+    {
+
+    }
+
+
+
+
+
 
     #endregion
 
