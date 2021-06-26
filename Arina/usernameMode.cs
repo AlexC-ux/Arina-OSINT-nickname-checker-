@@ -54,6 +54,7 @@ namespace Arina
             habr_username.Check(username);
             spotif_username.Check(username);
             ya_music_username.Check(username);
+            ebay_username.Check(username);
             ph_userame.Check(username);
             archive_is_username.Check(username);
 
@@ -400,7 +401,24 @@ namespace Arina
             catch { Console.WriteLine("[-] TikTok : NOT FOUND"); }
         }
     }
-
+    class ebay_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://www.ebay.com/usr/{username}";
+                WebClient wc = new WebClient();
+                string response = wc.DownloadString(url);
+                if (!response.Contains($"data-url=\"https://www.ebay.com/usr/{username}\""))
+                {
+                    Console.WriteLine("[-] Ebay : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] Ebay : https://www.ebay.com/usr/{username}"); }
+            }
+            catch { Console.WriteLine("[-] Ebay : NOT FOUND"); }
+        }
+    }
 
 
 
