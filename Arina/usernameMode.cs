@@ -339,7 +339,23 @@ namespace Arina
 
     class habr_username
     {
-
+        //
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://habr.com/ru/users/{username}/";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] Habr : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] Habr : https://habr.com/ru/users/{username}/"); }
+            }
+            catch { Console.WriteLine("[-] Habr : NOT FOUND"); }
+        }
     }
 
 
