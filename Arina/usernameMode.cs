@@ -46,6 +46,7 @@ namespace Arina
             reddit_username.Check(username);
             pikabu_username.Check(username);
             vk_username.Check(username);
+            tt_username.Check(username);
             pinterest_username.Check(username);
             twitch_username.Check(username);
             yt_username.Check(username);
@@ -380,6 +381,25 @@ namespace Arina
         }
     }
 
+    class tt_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://www.tiktok.com/@{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] TikTok : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] TikTok : https://www.tiktok.com/@{username}"); }
+            }
+            catch { Console.WriteLine("[-] TikTok : NOT FOUND"); }
+        }
+    }
 
 
 
