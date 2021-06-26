@@ -22,13 +22,12 @@ An open source intelligence tool to find info about your old pages.
 - Ebay
 - PayPal
 - PornHub
-- [ ] Steam
 - [ ] BuyMeACoffe
 - [ ] fix Telegram
 - [ ] Badoo
 - [ ] Tinder
 - [ ] LinkedIn
-- [ ] Patreon
+- [x] Patreon
 - [ ] Roblox
 - [ ] SoundCloud
 - [ ] Wikipedia
