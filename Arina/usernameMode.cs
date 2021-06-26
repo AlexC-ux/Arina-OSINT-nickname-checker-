@@ -6,7 +6,6 @@ namespace Arina
 
     class usernameMode
     {
-        public static string proxyAddr = "";
         static public void Start(string username)
         {
 
@@ -41,7 +40,6 @@ namespace Arina
             }
 
             github_username.Check(username);
-            twitter_username.Check(username);
             tg_username.Check(username);
             akniga_username.Check(username);
             blogger_username.Check(username);
@@ -56,9 +54,6 @@ namespace Arina
             spotif_username.Check(username);
             ya_music_username.Check(username);
             ph_userame.Check(username);
-
-            Console.WriteLine("\nSearch engines:");
-            webarch_username.Check(username);
             archive_is_username.Check(username);
 
 
@@ -88,17 +83,6 @@ namespace Arina
         }
     }
 
-    class twitter_username
-    {
-        public static void Check(string username)
-        {
-            try
-            {
-                Console.WriteLine($"[+] Twitter : https://web.archive.org/web/2020*/twitter.com/{username}");
-            }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
-        }
-    }
 
     class tg_username
     {
@@ -161,13 +145,6 @@ namespace Arina
         }
     }
 
-    class webarch_username
-    {
-        public static void Check(string username)
-        {
-            Console.WriteLine($"[+] WebArchive : https://google.com/?q=site:https://web.archive.org/web/+intext:{username}");
-        }
-    }
 
     class archive_is_username
     {
@@ -402,6 +379,8 @@ namespace Arina
             catch { Console.WriteLine("[-] PornHub : NOT FOUND"); }
         }
     }
+
+
 
 
 
