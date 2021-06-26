@@ -7,7 +7,7 @@ namespace Arina
     {
         static public void Start(string username)
         {
-            Console.WriteLine("\nProfiles:");
+            Console.WriteLine($"\nProfiles of {username}:");
             if (username.Contains(" "))
             {
                 string[] parts = username.Split(" ");
@@ -45,6 +45,8 @@ namespace Arina
             vk_username.Check(username);
             pinterest_username.Check(username);
             yt_username.Check(username);
+            fb_username.Check(username);
+
 
 
             Console.WriteLine("\nSearch engines:");
@@ -182,7 +184,7 @@ namespace Arina
                 }
                 else { Console.WriteLine($"[+] VK : https://vk.com/{username}"); }
             }
-            catch { }
+            catch { Console.WriteLine("[-] VK : NOT FOUND"); }
         }
     }
 
@@ -247,4 +249,25 @@ namespace Arina
             catch { Console.WriteLine("[-] YouTube : NOT FOUND"); }
         }
     }
+
+    class fb_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://www.facebook.com/{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] FaceBook : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] FaceBook : https://www.facebook.com/{username}"); }
+            }
+            catch { Console.WriteLine("[-] FaceBook : NOT FOUND"); }
+        }
+    }
+
 }
