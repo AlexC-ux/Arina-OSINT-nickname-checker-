@@ -24,7 +24,6 @@ An open source intelligence tool to find info about your old pages.
 - PornHub
 - [ ] Steam
 - [ ] BuyMeACoffe
-- [ ] Instagram
 - [ ] fix Telegram
 - [ ] Badoo
 - [ ] Tinder
