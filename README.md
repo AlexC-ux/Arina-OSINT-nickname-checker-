@@ -22,6 +22,7 @@ An open source intelligence tool to find info about your old pages.
 - Ebay
 - PayPal
 - PornHub
+- [ ] Steam
 - [ ] Instagram
 - [ ] fix Telegram
 - [ ] Badoo
