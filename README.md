@@ -6,7 +6,6 @@ An open source intelligence tool to find info about your old pages.
 - VKontakte
 - Pinterest
 - YouTube
-- Twitter
 - Telegram
 - Akniga
 - Blogger
