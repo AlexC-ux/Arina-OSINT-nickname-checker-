@@ -51,7 +51,9 @@ namespace Arina
             pinterest_username.Check(username);
             yt_username.Check(username);
             fb_username.Check(username);
-
+            habr_username.Check(username);
+            spotif_username.Check(username);
+            ya_music_username.Check(username);
 
 
             Console.WriteLine("\nSearch engines:");
