@@ -3,6 +3,7 @@ using System.Net;
 
 namespace Arina
 {
+
     class usernameMode
     {
         public static string proxyAddr = "";
@@ -63,6 +64,7 @@ namespace Arina
         }
     }
 
+    #region UsernameCheckClasses
     class github_username
     {
         public static void Check(string username)
@@ -293,5 +295,9 @@ namespace Arina
             catch { Console.WriteLine("[-] FaceBook : NOT FOUND"); }
         }
     }
+
+
+
+    #endregion
 
 }

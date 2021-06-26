@@ -5,6 +5,8 @@ namespace Arina
 {
     class Program
     {
+        #region
+        
         static void Main(string[] args)
         {
             
