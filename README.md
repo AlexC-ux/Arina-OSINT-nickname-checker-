@@ -17,7 +17,8 @@ An open source intelligence tool to find info about your old pages.
 - YandexMusic
 - Spotify
 - Habr
-- [ ] Another
+- [x] Twitch
+- [ ] another
 
 # Install info
 **Dependencies:**
