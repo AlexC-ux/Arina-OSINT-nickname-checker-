@@ -51,7 +51,9 @@ namespace Arina
             pinterest_username.Check(username);
             yt_username.Check(username);
             fb_username.Check(username);
-
+            habr_username.Check(username);
+            spotif_username.Check(username);
+            ya_music_username.Check(username);
 
 
             Console.WriteLine("\nSearch engines:");
@@ -315,6 +317,52 @@ namespace Arina
             catch { Console.WriteLine("[-] YandexMusic : NOT FOUND"); }
         }
     }
+
+    class spotif_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://open.spotify.com/user/{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] Spotify : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] Spotify : https://open.spotify.com/user/{username}"); }
+            }
+            catch { Console.WriteLine("[-] Spotify : NOT FOUND"); }
+        }
+    }
+
+
+    class habr_username
+    {
+        //
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://habr.com/ru/users/{username}/";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] Habr : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] Habr : https://habr.com/ru/users/{username}/"); }
+            }
+            catch { Console.WriteLine("[-] Habr : NOT FOUND"); }
+        }
+    }
+
+
+
+
 
 
     #endregion
