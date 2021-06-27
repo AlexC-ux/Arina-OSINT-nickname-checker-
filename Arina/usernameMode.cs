@@ -41,8 +41,10 @@ namespace Arina
 
             
             github_username.Check(username);
+            steam_username.Check(username);
             tg_username.Check(username);
             akniga_username.Check(username);
+            myspace_username.Check(username);
             blogger_username.Check(username);
             aboutme_username.Check(username);
             jimbo_username.Check(username);
@@ -69,6 +71,9 @@ namespace Arina
             archive_is_username.Check(username);
             flicklr_username.Check(username);
             slideshare_username.Check(username);
+            fanpop_username.Check(username);
+
+
 
 
         }
@@ -671,6 +676,67 @@ namespace Arina
     }
 
 
+    class fanpop_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://www.fanpop.com/fans/{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode != HttpStatusCode.OK)
+                {
+                    Console.WriteLine("[-] FanPop : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] FanPop : https://ru.wikipedia.org/wiki/Участник:{username}"); }
+            }
+            catch { Console.WriteLine("[-] FanPop : NOT FOUND"); }
+        }
+    }
+
+    class myspace_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://myspace.com/{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] MySpace : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] MySpace : https://myspace.com/{username}"); }
+            }
+            catch { Console.WriteLine("[-] MySpace : NOT FOUND"); }
+        }
+    }
+
+    class steam_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://steamcommunity.com/id/{username}";
+                WebClient wc = new WebClient();
+                wc.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90");
+                string response = wc.DownloadString(url);
+                if (response.Contains("linkStandard"))
+                {
+                    Console.WriteLine("[-] Wikipedia : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] Wikipedia : https://steamcommunity.com/id/{username}"); }
+            }
+            catch { Console.WriteLine("[-] Wikipedia : NOT FOUND"); }
+        }
+    }
+
+
     class _username
     {
         public static void Check(string username)
@@ -692,6 +758,25 @@ namespace Arina
     }
 
 
+    class _username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://ru.wikipedia.org/wiki/Участник:{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] Wikipedia : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] Wikipedia : https://ru.wikipedia.org/wiki/Участник:{username}"); }
+            }
+            catch { Console.WriteLine("[-] Wikipedia : NOT FOUND"); }
+        }
+    }
 
     #endregion
 
