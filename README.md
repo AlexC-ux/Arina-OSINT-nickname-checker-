@@ -23,7 +23,7 @@ An open source intelligence tool to find info about your old pages.
 - PayPal
 - PornHub
 - [ ] BuyMeACoffe
-- [ ] fix Telegram
+- [x] fix Telegram
 - [ ] Badoo
 - [ ] Tinder
 - [ ] LinkedIn
