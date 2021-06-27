@@ -30,6 +30,16 @@ If you want to support the project, you can give it a ⭐
 - PornHub
 - Wikipedia
 - [ ] BuyMeACoffe
+- [x] Steam
+- [x] Tumblr
+- [x] Flicklr
+- [x] WordPress
+- [x] Vimeo
+- [x] SlideShare
+- [x] FanPop
+- [x] MySpace
+- [x] Gravatar
+- [x] HubPages
 - [ ] Badoo
 - [ ] Tinder
 - [ ] Roblox
