@@ -31,7 +31,6 @@ An open source intelligence tool to find info about your old pages.
 - [ ] LinkedIn
 - [ ] Roblox
 - [x] Wikipedia
-- [ ] BaseCamp
 - [ ] Another
 
 # Install info
