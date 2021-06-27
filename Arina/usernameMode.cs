@@ -44,6 +44,7 @@ namespace Arina
             tg_username.Check(username);
             akniga_username.Check(username);
             blogger_username.Check(username);
+            jimbo_username.Check(username);
             reddit_username.Check(username);
             pikabu_username.Check(username);
             vk_username.Check(username);
@@ -58,6 +59,7 @@ namespace Arina
             ya_music_username.Check(username);
             ebay_username.Check(username);
             pp_username.Check(username);
+            wiki_username.Check(username);
             ph_userame.Check(username);
             archive_is_username.Check(username);
             soundc_username.Check(username);
@@ -516,6 +518,71 @@ namespace Arina
             catch { Console.WriteLine("[-] AboutMe : NOT FOUND"); }
         }
     }
+
+
+    class wiki_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://ru.wikipedia.org/wiki/Участник:{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] Wikipedia : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] Wikipedia : https://ru.wikipedia.org/wiki/Участник:{username}"); }
+            }
+            catch { Console.WriteLine("[-] Wikipedia : NOT FOUND"); }
+        }
+    }
+
+    class jimbo_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://{username}.jimdofree.com";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode != HttpStatusCode.OK)
+                {
+                    Console.WriteLine("[-] Jimbo : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] Jimbo : https://{username}.jimdofree.com"); }
+            }
+            catch { Console.WriteLine("[-] Jimbo : NOT FOUND"); }
+        }
+    }
+
+    class _username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://ru.wikipedia.org/wiki/Участник:{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] Wikipedia : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] Wikipedia : https://ru.wikipedia.org/wiki/Участник:{username}"); }
+            }
+            catch { Console.WriteLine("[-] Wikipedia : NOT FOUND"); }
+        }
+    }
+
+
+
+
 
 
     #endregion
