@@ -44,6 +44,7 @@ namespace Arina
             tg_username.Check(username);
             akniga_username.Check(username);
             blogger_username.Check(username);
+            aboutme_username.Check(username);
             jimbo_username.Check(username);
             tumblr_username.Check(username);
             wp_username.Check(username);
@@ -67,6 +68,7 @@ namespace Arina
             ph_userame.Check(username);
             archive_is_username.Check(username);
             flicklr_username.Check(username);
+            slideshare_username.Check(username);
 
 
         }
@@ -329,7 +331,7 @@ namespace Arina
 
     class habr_username
     {
-        //
+        
         public static void Check(string username)
         {
             try
@@ -644,6 +646,27 @@ namespace Arina
                 else { Console.WriteLine($"[+] Vimeo : https://vimeo.com/{username}"); }
             }
             catch { Console.WriteLine("[-] Vimeo : NOT FOUND"); }
+        }
+    }
+
+
+    class slideshare_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://www.slideshare.net/{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] SlideShare : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] SlideShare : https://www.slideshare.net/{username}"); }
+            }
+            catch { Console.WriteLine("[-] SlideShare : NOT FOUND"); }
         }
     }
 
