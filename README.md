@@ -28,11 +28,11 @@ If you want to support the project, you can give it a ⭐
 - Ebay
 - PayPal
 - PornHub
+- Wikipedia
 - [ ] BuyMeACoffe
 - [ ] Badoo
 - [ ] Tinder
 - [ ] Roblox
-- [x] Wikipedia
 - [ ] Another
 
 # Install info
