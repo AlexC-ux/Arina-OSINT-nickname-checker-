@@ -28,7 +28,6 @@ An open source intelligence tool to find info about your old pages.
 - [ ] BuyMeACoffe
 - [ ] Badoo
 - [ ] Tinder
-- [ ] LinkedIn
 - [ ] Roblox
 - [x] Wikipedia
 - [ ] Another
