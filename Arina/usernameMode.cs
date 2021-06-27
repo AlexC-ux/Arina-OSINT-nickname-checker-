@@ -759,23 +759,23 @@ namespace Arina
     }
 
 
-    class _username
+    class hubpages_username
     {
         public static void Check(string username)
         {
             try
             {
-                string url = $"https://ru.wikipedia.org/wiki/Участник:{username}";
+                string url = $"https://hubpages.com/@{username}";
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90";
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 if (response.StatusCode == HttpStatusCode.NotFound)
                 {
-                    Console.WriteLine("[-] Wikipedia : NOT FOUND");
+                    Console.WriteLine("[-] HubPages : NOT FOUND");
                 }
-                else { Console.WriteLine($"[+] Wikipedia : https://ru.wikipedia.org/wiki/Участник:{username}"); }
+                else { Console.WriteLine($"[+] HubPages : https://hubpages.com/@{username}"); }
             }
-            catch { Console.WriteLine("[-] Wikipedia : NOT FOUND"); }
+            catch { Console.WriteLine("[-] HubPages : NOT FOUND"); }
         }
     }
 
