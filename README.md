@@ -30,7 +30,7 @@ An open source intelligence tool to find info about your old pages.
 - [ ] Tinder
 - [ ] LinkedIn
 - [ ] Roblox
-- [ ] Wikipedia
+- [x] Wikipedia
 - [ ] BaseCamp
 - [ ] Another
 
