@@ -1,5 +1,7 @@
 # Arina-OSINT
-An open source intelligence tool to find info about your old pages.
+An OSINT (open source intelligence tool) to find info about your old pages.
+
+If you want to support the project, you can give it a ⭐
 
 # Resources:
 - GitHub
@@ -10,6 +12,7 @@ An open source intelligence tool to find info about your old pages.
 - Facebook
 - Akniga
 - Blogger
+- Jimbo
 - Reddit
 - Pikabu
 - About.me
@@ -25,13 +28,11 @@ An open source intelligence tool to find info about your old pages.
 - Ebay
 - PayPal
 - PornHub
+- Wikipedia
 - [ ] BuyMeACoffe
 - [ ] Badoo
 - [ ] Tinder
-- [ ] LinkedIn
 - [ ] Roblox
-- [ ] Wikipedia
-- [ ] BaseCamp
 - [ ] Another
 
 # Install info
