@@ -1,5 +1,5 @@
 # Arina-OSINT
-An open source intelligence tool to find info about your old pages.
+An OSINT (open source intelligence tool) to find info about your old pages.
 
 If you want to support the project, you can give it a ⭐
 
