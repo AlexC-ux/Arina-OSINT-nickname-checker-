@@ -96,10 +96,10 @@ namespace Arina
             try
             {
                 string url = $"https://t.me/{username}";
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                if (response.ResponseUri.ToString() != $"https://t.me/{username}")
+                WebClient wc = new WebClient();
+                string response = wc.DownloadString(url);
+
+                if (response.Contains($", you can contact "))
                 {
                     Console.WriteLine("[-] Telegram : NOT FOUND");
                 }
