@@ -60,7 +60,7 @@ namespace Arina
             pp_username.Check(username);
             ph_userame.Check(username);
             archive_is_username.Check(username);
-
+            soundc_username.Check(username);
 
 
 
@@ -455,7 +455,7 @@ namespace Arina
             {
                 string url = $"https://www.patreon.com/{username}/creators";
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                request.UserAgent = "Mozilla/5.0 (Linux; Android 9; Pixel 2 XL Build/PPP3.180510.008) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Mobile Safari/537.36";
+                request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90";
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 if (response.StatusCode == HttpStatusCode.NotFound)
                 {
@@ -467,6 +467,45 @@ namespace Arina
         }
     }
 
+    class soundc_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://soundcloud.com/{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla/5.0 (Linux; Android 9; Pixel 2 XL Build/PPP3.180510.008) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Mobile Safari/537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] SoundCloud : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] SoundCloud : https://soundcloud.com/{username}"); }
+            }
+            catch { Console.WriteLine("[-] SoundCloud : NOT FOUND"); }
+        }
+    }
+
+    class aboutme_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://about.me/{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] AboutMe : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] AboutMe : https://about.me/{username}"); }
+            }
+            catch { Console.WriteLine("[-] AboutMe : NOT FOUND"); }
+        }
+    }
 
 
     #endregion
