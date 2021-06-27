@@ -6,16 +6,19 @@ An open source intelligence tool to find info about your old pages.
 - VKontakte
 - Pinterest
 - YouTube
-- Telegram
+- Telegram (fixed)
 - Facebook
 - Akniga
 - Blogger
 - Reddit
 - Pikabu
+- About.me
 - Archive.is
 - WebArchive
+- Patreon
 - YandexMusic
 - Spotify
+- SoundCloud
 - Habr
 - Twitch
 - TikTok
@@ -23,15 +26,11 @@ An open source intelligence tool to find info about your old pages.
 - PayPal
 - PornHub
 - [ ] BuyMeACoffe
-- [ ] fix Telegram
 - [ ] Badoo
 - [ ] Tinder
 - [ ] LinkedIn
-- [x] Patreon
 - [ ] Roblox
-- [x] SoundCloud
 - [ ] Wikipedia
-- [x] About.Me
 - [ ] BaseCamp
 - [ ] Another
 
