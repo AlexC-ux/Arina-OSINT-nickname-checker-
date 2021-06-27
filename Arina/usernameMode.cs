@@ -47,6 +47,7 @@ namespace Arina
             myspace_username.Check(username);
             blogger_username.Check(username);
             aboutme_username.Check(username);
+            gravatar_username.Check(username);
             jimbo_username.Check(username);
             tumblr_username.Check(username);
             wp_username.Check(username);
@@ -728,32 +729,32 @@ namespace Arina
                 string response = wc.DownloadString(url);
                 if (response.Contains("linkStandard"))
                 {
-                    Console.WriteLine("[-] Wikipedia : NOT FOUND");
+                    Console.WriteLine("[-] Steam : NOT FOUND");
                 }
-                else { Console.WriteLine($"[+] Wikipedia : https://steamcommunity.com/id/{username}"); }
+                else { Console.WriteLine($"[+] Steam : https://steamcommunity.com/id/{username}"); }
             }
-            catch { Console.WriteLine("[-] Wikipedia : NOT FOUND"); }
+            catch { Console.WriteLine("[-] Steam : NOT FOUND"); }
         }
     }
 
 
-    class _username
+    class gravatar_username
     {
         public static void Check(string username)
         {
             try
             {
-                string url = $"https://ru.wikipedia.org/wiki/Участник:{username}";
+                string url = $"http://en.gravatar.com/{username}";
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90";
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                 if (response.StatusCode == HttpStatusCode.NotFound)
                 {
-                    Console.WriteLine("[-] Wikipedia : NOT FOUND");
+                    Console.WriteLine("[-] Gravatar : NOT FOUND");
                 }
-                else { Console.WriteLine($"[+] Wikipedia : https://ru.wikipedia.org/wiki/Участник:{username}"); }
+                else { Console.WriteLine($"[+] Gravatar : http://en.gravatar.com/{username}"); }
             }
-            catch { Console.WriteLine("[-] Wikipedia : NOT FOUND"); }
+            catch { Console.WriteLine("[-] Gravatar : NOT FOUND"); }
         }
     }
 
