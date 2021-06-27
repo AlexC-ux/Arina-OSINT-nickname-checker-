@@ -463,7 +463,17 @@ namespace Arina
                 }
                 else { Console.WriteLine($"[+] Patreon : https://www.patreon.com/{username}/creators"); }
             }
-            catch { Console.WriteLine("[-] Patreon : NOT FOUND"); }
+            catch (Exception ex){
+                if (ex.ToString().Contains("404"))
+                {
+                    Console.WriteLine("[-] Patreon : NOT FOUND");
+                }
+                else
+                {
+                    Console.WriteLine($"[+] Patreon : https://www.patreon.com/{username}/creators");
+                }
+            
+            }
         }
     }
 
