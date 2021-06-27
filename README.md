@@ -12,6 +12,7 @@ If you want to support the project, you can give it a ⭐
 - Facebook
 - Akniga
 - Blogger
+- Jimbo
 - Reddit
 - Pikabu
 - About.me
