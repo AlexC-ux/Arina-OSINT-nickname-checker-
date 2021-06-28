@@ -53,7 +53,7 @@ Debain: https://docs.microsoft.com/ru-ru/dotnet/core/install/linux-debian
 
 Ubuntu: https://docs.microsoft.com/ru-ru/dotnet/core/install/linux-ubuntu
 
-P.s. не стоит устанавливать поверх .NetCore 5.x
+P.s. not worth installing over .NetCore 5.x 
 
 Windows: https://docs.microsoft.com/ru-ru/dotnet/core/install/windows?tabs=net50
 
