@@ -29,10 +29,20 @@ If you want to support the project, you can give it a ⭐
 - PayPal
 - PornHub
 - Wikipedia
-- [ ] BuyMeACoffe
+- Steam
+- Tumblr
+- Flicklr
+- WordPress
+- Vimeo
+- SlideShare
+- FanPop
+- MySpace
+- Gravatar
+- HubPages
 - [ ] Badoo
 - [ ] Tinder
 - [ ] Roblox
+- [ ] BuyMeACoffe
 - [ ] Another
 
 # Install info
