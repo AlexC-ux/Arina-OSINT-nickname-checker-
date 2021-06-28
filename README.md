@@ -3,6 +3,17 @@ An OSINT (open source intelligence tool) to find info about your old pages.
 
 If you want to support the project, you can give it a ⭐
 
+# How to install .NetCore 3.1 runtime.
+Debain: https://docs.microsoft.com/ru-ru/dotnet/core/install/linux-debian
+
+Ubuntu: https://docs.microsoft.com/ru-ru/dotnet/core/install/linux-ubuntu
+
+P.s. не стоит устанавливать поверх .NetCore 5.x
+
+Windows: https://docs.microsoft.com/ru-ru/dotnet/core/install/windows?tabs=net50
+
+
+
 # Resources:
 - GitHub
 - VKontakte
