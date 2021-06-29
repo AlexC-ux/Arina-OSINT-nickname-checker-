@@ -620,11 +620,11 @@ namespace Arina
         {
             try
             {
-                string url = $"https://{username}.wordpress.com";
+                string url = $"https://{username}.wordpress.com/";
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90";
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                if (response.StatusCode != HttpStatusCode.OK)
+                if (response.Headers.Get("location").Contains("subdomain={username}"))
                 {
                     Console.WriteLine("[-] WordPress : NOT FOUND");
                 }
