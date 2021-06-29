@@ -8,7 +8,7 @@ If you want to support the project, you can give it a ⭐
 - VKontakte
 - Pinterest
 - YouTube
-- Telegram (fixed)
+- Telegram
 - Facebook
 - Akniga
 - Blogger
