@@ -45,11 +45,19 @@ If you want to support the project, you can give it a ⭐
 - [ ] BuyMeACoffe
 - [ ] Another
 
-# Install info
-**Dependencies:**
+# Dependencies:
 - .NET Core 3.1
 
-**How to Install:**
+# How to install .NetCore 3.1 runtime.
+Debain: https://docs.microsoft.com/ru-ru/dotnet/core/install/linux-debian
+
+Ubuntu: https://docs.microsoft.com/ru-ru/dotnet/core/install/linux-ubuntu
+
+P.s. not worth installing over .NetCore 5.x 
+
+Windows: https://docs.microsoft.com/ru-ru/dotnet/core/install/windows?tabs=net50
+
+# Tool installation:
 1. Install dependencies
 2. Clone repository
 3. - Find your compiled virsion in Arina/bin 
