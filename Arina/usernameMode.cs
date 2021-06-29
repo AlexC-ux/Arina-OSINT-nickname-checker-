@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net;
-using System.Web;
 namespace Arina
 {
 
@@ -39,7 +38,7 @@ namespace Arina
                 Console.WriteLine("Username: " + username);
             }
 
-            
+
             github_username.Check(username);
             steam_username.Check(username);
             tg_username.Check(username);
@@ -337,7 +336,7 @@ namespace Arina
 
     class habr_username
     {
-        
+
         public static void Check(string username)
         {
             try
@@ -443,8 +442,8 @@ namespace Arina
         {
             try
             {
-                
-                
+
+
                 string url = $"https://www.paypal.com/paypalme/{username}";
                 WebClient wc = new WebClient();
 
@@ -476,7 +475,8 @@ namespace Arina
                 }
                 else { Console.WriteLine($"[+] Patreon : https://www.patreon.com/{username}/creators"); }
             }
-            catch (Exception ex){
+            catch (Exception ex)
+            {
                 if (ex.ToString().Contains("404"))
                 {
                     Console.WriteLine("[-] Patreon : NOT FOUND");
@@ -485,7 +485,7 @@ namespace Arina
                 {
                     Console.WriteLine($"[+] Patreon : https://www.patreon.com/{username}/creators");
                 }
-            
+
             }
         }
     }
@@ -623,7 +623,7 @@ namespace Arina
                 string url = $"https://{username}.wordpress.com/";
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90";
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse(url);
                 if (response.Headers.Get("location").Contains("subdomain={username}"))
                 {
                     Console.WriteLine("[-] WordPress : NOT FOUND");
