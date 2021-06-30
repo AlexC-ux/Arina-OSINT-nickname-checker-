@@ -64,10 +64,13 @@ namespace Arina
             patreon_username.Check(username);
             spotif_username.Check(username);
             ya_music_username.Check(username);
+            ya_market_username.Check(username);
+            ya_zen_username.Check(username);
             soundc_username.Check(username);
             ebay_username.Check(username);
             pp_username.Check(username);
             wiki_username.Check(username);
+            hubpages_username.Check(username);
             ph_userame.Check(username);
             archive_is_username.Check(username);
             flicklr_username.Check(username);
@@ -311,6 +314,47 @@ namespace Arina
                 else { Console.WriteLine($"[+] YandexMusic : https://music.yandex.ru/users/{username}/playlists"); }
             }
             catch { Console.WriteLine("[-] YandexMusic : NOT FOUND"); }
+        }
+    }
+
+
+    class ya_market_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://market.yandex.ru/user/{username}/reviews";
+                WebClient wc = new WebClient();
+                string response = wc.DownloadString(url);
+                if (response.Contains(": 404"))
+                {
+                    Console.WriteLine("[-] YandexMarket : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] YandexMarket : https://market.yandex.ru/user/{username}/reviews"); }
+            }
+            catch { Console.WriteLine("[-] YandexMarket : NOT FOUND"); }
+        }
+    }
+
+
+    class ya_zen_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://zen.yandex.com/{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] YandexZen : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] YandexZen : https://zen.yandex.com/{username}"); }
+            }
+            catch { Console.WriteLine("[-] YandexZen : NOT FOUND"); }
         }
     }
 
@@ -784,6 +828,9 @@ namespace Arina
             catch { Console.WriteLine("[-] HubPages : NOT FOUND"); }
         }
     }
+
+     
+
 
     #endregion
 
