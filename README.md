@@ -17,8 +17,9 @@ If you want to support the project, you can give it a ⭐
 - Pikabu
 - About.me
 - Archive.is
-- WebArchive
 - Patreon
+- YandexZen
+- YandexMarket
 - YandexMusic
 - Spotify
 - SoundCloud
