@@ -19,6 +19,8 @@ If you want to support the project, you can give it a ⭐
 - Archive.is
 - WebArchive
 - Patreon
+- YandexZen
+- YandexMarket
 - YandexMusic
 - Spotify
 - SoundCloud
