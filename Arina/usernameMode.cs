@@ -9,73 +9,78 @@ namespace Arina
         static public void Start(string username)
         {
 
-            Console.WriteLine($"\nProfiles of {username}:");
+            Console.WriteLine($"\nSearching profiles of {username}:");
             if (username.Contains(" "))
             {
+                Console.WriteLine("Username contains space, what character to replace the space with? (_|.|none|another character)\nWrite * to use '_' and '-' and '.' as seporators.");
 
-                string[] parts = username.Split(" ");
-                Console.WriteLine("Username contains space, which separator to use? (_|.|none|another character)");
-                string sep = Console.ReadLine();
-                //Заполнение пробелов
-                username = "";
-                int i = 0;
-                if (i + 2 == parts.Length)
+
+                string sep = Console.ReadLine();//считывание разделителя
+
+                if (sep != "*")
                 {
-                    username += parts[i] + sep + parts[i + 1];
-                    Console.WriteLine(username);
+                    string SeporatedUsername = username.Replace(" ", sep);
+                    Console.WriteLine($"Username: {SeporatedUsername}");
+                    searchUsernames(SeporatedUsername);
                 }
-                for (i = 0; i < parts.Length - 2; i++)
+                else
                 {
-                    username += parts[i] + sep;
-
-
-                    if (i + 1 >= parts.Length - 2)
+                    string[] seporators = new string[] { "_", "-", "." };
+                    foreach (string sepo in seporators)
                     {
-                        username += parts[i + 1] + sep + parts[i + 2];
+                        string SeporatedUsername = username.Replace(" ", sepo);
+                        Console.WriteLine($"Username: {SeporatedUsername}");
+                        searchUsernames(SeporatedUsername);
                     }
-
                 }
-
-                Console.WriteLine("Username: " + username);
+            }
+            else
+            {
+                Console.WriteLine($"Username: {username}");
+                searchUsernames(username);
             }
 
-            
-            github_username.Check(username);
-            steam_username.Check(username);
-            tg_username.Check(username);
-            akniga_username.Check(username);
-            myspace_username.Check(username);
-            blogger_username.Check(username);
-            aboutme_username.Check(username);
-            gravatar_username.Check(username);
-            jimbo_username.Check(username);
-            tumblr_username.Check(username);
-            wp_username.Check(username);
-            reddit_username.Check(username);
-            pikabu_username.Check(username);
-            vk_username.Check(username);
-            tt_username.Check(username);
-            pinterest_username.Check(username);
-            twitch_username.Check(username);
-            yt_username.Check(username);
-            vimeo_username.Check(username);
-            fb_username.Check(username);
-            habr_username.Check(username);
-            patreon_username.Check(username);
-            spotif_username.Check(username);
-            ya_music_username.Check(username);
-            ya_market_username.Check(username);
-            ya_zen_username.Check(username);
-            soundc_username.Check(username);
-            ebay_username.Check(username);
-            pp_username.Check(username);
-            wiki_username.Check(username);
-            hubpages_username.Check(username);
-            ph_userame.Check(username);
-            archive_is_username.Check(username);
-            flicklr_username.Check(username);
-            slideshare_username.Check(username);
-            fanpop_username.Check(username);
+
+            void searchUsernames(string username)
+            {
+                github_username.Check(username);
+                steam_username.Check(username);
+                tg_username.Check(username);
+                akniga_username.Check(username);
+                myspace_username.Check(username);
+                blogger_username.Check(username);
+                aboutme_username.Check(username);
+                gravatar_username.Check(username);
+                jimbo_username.Check(username);
+                tumblr_username.Check(username);
+                wp_username.Check(username);
+                reddit_username.Check(username);
+                pikabu_username.Check(username);
+                vk_username.Check(username);
+                tt_username.Check(username);
+                pinterest_username.Check(username);
+                twitch_username.Check(username);
+                yt_username.Check(username);
+                vimeo_username.Check(username);
+                fb_username.Check(username);
+                habr_username.Check(username);
+                patreon_username.Check(username);
+                spotif_username.Check(username);
+                ya_music_username.Check(username);
+                ya_market_username.Check(username);
+                ya_zen_username.Check(username);
+                soundc_username.Check(username);
+                ebay_username.Check(username);
+                pp_username.Check(username);
+                wiki_username.Check(username);
+                hubpages_username.Check(username);
+                ph_userame.Check(username);
+                archive_is_username.Check(username);
+                flicklr_username.Check(username);
+                slideshare_username.Check(username);
+                fanpop_username.Check(username);
+                cups_username.Check(username);
+            }
 
 
 
@@ -829,7 +834,26 @@ namespace Arina
         }
     }
 
-     
+    class cups_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://www.7cups.com/@{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine("[-] 7Cups : NOT FOUND");
+                }
+                else { Console.WriteLine($"[+] 7Cups : https://www.7cups.com/@{username}"); }
+            }
+            catch { Console.WriteLine("[-] 7Cups : NOT FOUND"); }
+        }
+    }
+
 
 
     #endregion
