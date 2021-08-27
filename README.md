@@ -40,6 +40,7 @@ If you want to support the project, you can give it a ⭐
 - MySpace
 - Gravatar
 - HubPages
+- 7 Cups
 - [ ] Badoo
 - [ ] Tinder
 - [ ] Roblox
