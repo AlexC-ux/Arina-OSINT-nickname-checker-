@@ -8,7 +8,7 @@ namespace Arina
     {
         static public void Start(string username)
         {
-
+             
             Console.WriteLine($"\nSearching profiles of {username}:");
             if (username.Contains(" "))
             {
