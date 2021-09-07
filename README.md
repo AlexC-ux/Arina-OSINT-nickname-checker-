@@ -41,7 +41,7 @@ If you want to support the project, you can give it a ⭐
 - Gravatar
 - HubPages
 - 7 Cups
-- [ ] Badoo
+- [x] Badoo
 - [ ] Tinder
 - [ ] Roblox
 - [ ] BuyMeACoffe
@@ -60,7 +60,7 @@ P.s. not worth installing over .NetCore 5.x
 Windows: https://docs.microsoft.com/ru-ru/dotnet/core/install/windows?tabs=net50
 
 # Tool installation:
-1. Install dependencies
+1. Install dependencies (if you need)
 2. Clone repository
-3. - Find your compiled virsion in Arina/bin 
-   - Compile .cs source files
+3. - Find your compiled virsion in Arina/bin.
+   - Compile .cs source files.
