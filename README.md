@@ -41,7 +41,7 @@ If you want to support the project, you can give it a ⭐
 - Gravatar
 - HubPages
 - 7 Cups
-- [x] Badoo
+- [ ] Badoo
 - [ ] Tinder
 - [ ] Roblox
 - [ ] BuyMeACoffe
