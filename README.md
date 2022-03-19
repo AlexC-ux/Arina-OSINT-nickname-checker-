@@ -13,7 +13,7 @@ If you want to support the project, you can give it a ⭐
 - Akniga
 - Blogger
 - Jimbo
-- Reddit
+- Reddit (fixed)
 - Pikabu
 - About.me
 - Archive.is
@@ -26,7 +26,7 @@ If you want to support the project, you can give it a ⭐
 - Habr
 - Twitch
 - TikTok
-- Ebay
+- Ebay (fixed)
 - PayPal
 - PornHub
 - Wikipedia
@@ -40,10 +40,17 @@ If you want to support the project, you can give it a ⭐
 - MySpace
 - Gravatar
 - HubPages
+- 7 Cups
+
+***In plans:***
+- [X] TenChat
+- [X] 9GAG
+- [X] EyeEm
+- [X] Disqus
 - [ ] Badoo
 - [ ] Tinder
 - [ ] Roblox
-- [ ] BuyMeACoffe
+- [X] BuyMeACoffe
 - [ ] Another
 
 # Dependencies:
@@ -59,7 +66,7 @@ P.s. not worth installing over .NetCore 5.x
 Windows: https://docs.microsoft.com/ru-ru/dotnet/core/install/windows?tabs=net50
 
 # Tool installation:
-1. Install dependencies
+1. Install dependencies (if you need)
 2. Clone repository
-3. - Find your compiled virsion in Arina/bin 
-   - Compile .cs source files
+3. - Find your compiled virsion in Arina/bin.
+   - Compile .cs source files.
