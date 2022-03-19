@@ -76,14 +76,147 @@ namespace Arina
             flicklr_username.Check(username);
             slideshare_username.Check(username);
             fanpop_username.Check(username);
-
-
+            tenchat_username.Check(username);
+            buymeacoffee_username.Check(username);
+            _9gag_username.Check(username);
+            last_fm_username.Check(username);
+            eyeem_username.Check(username);
+            disqus_username.Check(username);
 
 
         }
     }
 
     #region UsernameCheckClasses
+
+
+    class disqus_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://disqus.com/by/{username}/";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    Console.WriteLine($"[+] Disqus : https://disqus.com/by/{username}/");
+                }
+                else { Console.WriteLine("[-] Disqus : NOT FOUND"); }
+            }
+            catch { Console.WriteLine("[-] Disqus : NOT FOUND"); }
+        }
+    }
+
+
+    class eyeem_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://www.eyeem.com/u/{username}/photos";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    Console.WriteLine($"[+] EyeEm : https://www.eyeem.com/u/{username}/photos");
+                }
+                else { Console.WriteLine("[-] EyeEm : NOT FOUND"); }
+            }
+            catch { Console.WriteLine("[-] EyeEm : NOT FOUND"); }
+        }
+    }
+
+
+    class last_fm_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://www.last.fm/user/{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    Console.WriteLine($"[+] LastFm : https://www.last.fm/user/{username}");
+                }
+                else { Console.WriteLine("[-] LastFm : NOT FOUND"); }
+            }
+            catch { Console.WriteLine("[-] LastFm : NOT FOUND"); }
+        }
+    }
+
+
+    class _9gag_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://9gag.com/u/{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    Console.WriteLine($"[+] 9GAG : https://9gag.com/u/{username}");
+                }
+                else { Console.WriteLine("[-] 9GAG : NOT FOUND"); }
+            }
+            catch { Console.WriteLine("[-] 9GAG : NOT FOUND"); }
+        }
+    }
+
+
+    class buymeacoffee_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://www.buymeacoffee.com/{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    Console.WriteLine($"[+] BuyMeACoffe : https://www.buymeacoffee.com/{username}");
+                }
+                else { Console.WriteLine("[-] BuyMeACoffe : NOT FOUND"); }
+            }
+            catch { Console.WriteLine("[-] BuyMeACoffe : NOT FOUND"); }
+        }
+    }
+
+
+    class tenchat_username
+    {
+        public static void Check(string username)
+        {
+            try
+            {
+                string url = $"https://tenchat.ru/{username}";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    Console.WriteLine($"[+] TenChat : https://tenchat.ru/{username}");
+                }
+                else { Console.WriteLine("[-] TenChat : NOT FOUND");  }
+            }
+            catch { Console.WriteLine("[-] TenChat : NOT FOUND"); }
+        }
+
+    }
+
+
     class github_username
     {
         public static void Check(string username)
@@ -153,10 +286,8 @@ namespace Arina
             try
             {
                 string url = $"https://www.reddit.com/user/{username}";
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                request.UserAgent = "Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36";
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                if (response.StatusCode == HttpStatusCode.NotFound)
+                
+                if (new WebClient().DownloadString(url).Contains("Dive into anything"))
                 {
                     Console.WriteLine("[-] Reddit : NOT FOUND");
                 }
@@ -470,7 +601,7 @@ namespace Arina
                 string url = $"https://www.ebay.com/usr/{username}";
                 WebClient wc = new WebClient();
                 string response = wc.DownloadString(url);
-                if (!response.Contains($"data-url=\"https://www.ebay.com/usr/{username}\""))
+                if (response.Contains($"Profile - error"))
                 {
                     Console.WriteLine("[-] Ebay : NOT FOUND");
                 }
