@@ -26,7 +26,7 @@ If you want to support the project, you can give it a ⭐
 - Habr
 - Twitch
 - TikTok
-- Ebay
+- Ebay (fixed)
 - PayPal
 - PornHub
 - Wikipedia
