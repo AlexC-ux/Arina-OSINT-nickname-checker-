@@ -68,5 +68,5 @@ Windows: https://docs.microsoft.com/ru-ru/dotnet/core/install/windows?tabs=net50
 # Tool installation:
 1. Install dependencies (if you need)
 2. Clone repository
-3. - Find your compiled virsion in Arina/bin.
+3. - Find your compiled virsion in Arina/bin (or https://github.com/AlexC-ux/Arina-OSINT/releases/).
    - Compile .cs source files.
