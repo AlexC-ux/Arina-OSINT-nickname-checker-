@@ -41,6 +41,8 @@ If you want to support the project, you can give it a ⭐
 - Gravatar
 - HubPages
 - 7 Cups
+
+***In plans:***
 - [X] TenChat
 - [X] 9GAG
 - [X] EyeEm
