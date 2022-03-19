@@ -42,6 +42,7 @@ If you want to support the project, you can give it a ⭐
 - HubPages
 - 7 Cups
 - [X] TenChat
+- [X] 9GAG
 - [ ] Badoo
 - [ ] Tinder
 - [ ] Roblox
