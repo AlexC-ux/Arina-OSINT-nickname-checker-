@@ -46,6 +46,7 @@ If you want to support the project, you can give it a ⭐
 - [X] TenChat
 - [X] 9GAG
 - [X] EyeEm
+- [X] Disqus
 - [ ] Badoo
 - [ ] Tinder
 - [ ] Roblox
