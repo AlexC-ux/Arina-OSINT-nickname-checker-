@@ -13,7 +13,7 @@ If you want to support the project, you can give it a ⭐
 - Akniga
 - Blogger
 - Jimbo
-- Reddit (fixed)
+- Reddit
 - Pikabu
 - About.me
 - Archive.is
@@ -26,7 +26,7 @@ If you want to support the project, you can give it a ⭐
 - Habr
 - Twitch
 - TikTok
-- Ebay (fixed)
+- Ebay
 - PayPal
 - PornHub
 - Wikipedia
@@ -41,16 +41,16 @@ If you want to support the project, you can give it a ⭐
 - Gravatar
 - HubPages
 - 7 Cups
+- TenChat
+- 9GAG
+- EyeEm
+- Disqus
+- BuyMeACoffe
 
-***In plans:***
-- [X] TenChat
-- [X] 9GAG
-- [X] EyeEm
-- [X] Disqus
-- [ ] Badoo
+
+**In plans:**
 - [ ] Tinder
 - [ ] Roblox
-- [X] BuyMeACoffe
 - [ ] Another
 
 # Dependencies:
