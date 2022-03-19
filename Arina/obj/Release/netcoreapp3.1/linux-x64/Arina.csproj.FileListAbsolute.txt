@@ -11,3 +11,17 @@ C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\A
 C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\Arina.pdb
 C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\Arina.genruntimeconfig.cache
 C:\Users\AlexC-ux\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\Arina.csproj.AssemblyReference.cache
+C:\Users\eunv2\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\linux-x64\Arina
+C:\Users\eunv2\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\linux-x64\Arina.deps.json
+C:\Users\eunv2\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\linux-x64\Arina.runtimeconfig.json
+C:\Users\eunv2\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\linux-x64\Arina.runtimeconfig.dev.json
+C:\Users\eunv2\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\linux-x64\Arina.dll
+C:\Users\eunv2\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\linux-x64\Arina.pdb
+C:\Users\eunv2\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\Arina.csproj.AssemblyReference.cache
+C:\Users\eunv2\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\Arina.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eunv2\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\Arina.AssemblyInfoInputs.cache
+C:\Users\eunv2\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\Arina.AssemblyInfo.cs
+C:\Users\eunv2\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\Arina.csproj.CoreCompileInputs.cache
+C:\Users\eunv2\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\Arina.dll
+C:\Users\eunv2\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\Arina.pdb
+C:\Users\eunv2\source\repos\Arina\Arina\obj\Release\netcoreapp3.1\linux-x64\Arina.genruntimeconfig.cache
