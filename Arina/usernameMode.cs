@@ -83,7 +83,6 @@ namespace Arina
             eyeem_username.Check(username);
             disqus_username.Check(username);
 
-
         }
     }
 
