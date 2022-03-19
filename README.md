@@ -13,7 +13,7 @@ If you want to support the project, you can give it a ⭐
 - Akniga
 - Blogger
 - Jimbo
-- Reddit
+- Reddit (fixed)
 - Pikabu
 - About.me
 - Archive.is
