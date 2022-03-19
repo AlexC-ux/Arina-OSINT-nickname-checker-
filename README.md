@@ -45,7 +45,7 @@ If you want to support the project, you can give it a ⭐
 - [ ] Badoo
 - [ ] Tinder
 - [ ] Roblox
-- [ ] BuyMeACoffe
+- [X] BuyMeACoffe
 - [ ] Another
 
 # Dependencies:
