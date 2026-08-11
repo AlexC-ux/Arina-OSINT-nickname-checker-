@@ -1,10 +1,11 @@
-import { AlwaysFoundChecker } from './strategies/alwaysFoundChecker';
 import { ContentMarkerAbsenceChecker } from './strategies/contentMarkerAbsenceChecker';
 import { ContentMarkerPresenceChecker } from './strategies/contentMarkerPresenceChecker';
 import { HttpStatusNotFoundChecker } from './strategies/httpStatusNotFoundChecker';
 import { HttpStatusOkOnlyChecker } from './strategies/httpStatusOkOnlyChecker';
 import { PatreonChecker } from './strategies/patreonChecker';
 import { RedirectUrlMarkerChecker } from './strategies/redirectUrlMarkerChecker';
+import { SearchLinkChecker } from './strategies/searchLinkChecker';
+import { UnreliableChecker } from './strategies/unreliableChecker';
 import { UsernameChecker } from './types';
 import { USER_AGENTS } from './userAgents';
 
@@ -12,9 +13,14 @@ import { USER_AGENTS } from './userAgents';
  * Builds the full list of username checkers, one per service, in the same
  * order they were invoked from `usernameMode.Start` in the original
  * Arina/usernameMode.cs. Every URL template, marker string and User-Agent
- * below is a direct, unmodified port of the corresponding C# `Check`
- * method - including the WordPress/Patreon/FanPop quirks documented on
- * their respective strategy classes.
+ * below is a direct port of the corresponding C# `Check` method, EXCEPT
+ * where a service's verification method has since stopped working because
+ * the site itself changed (see the inline comments on those entries) -
+ * those were updated to either use a still-valid marker (e.g. Ebay) or to
+ * report `unreliable` instead of guessing FOUND/NOT FOUND from a signal
+ * that no longer means anything (e.g. VK, TikTok, Patreon's error path).
+ * The WordPress/FanPop quirks that are still accurate are preserved as
+ * documented on their respective strategy classes.
  */
 export function createUsernameCheckers(): UsernameChecker[] {
   return [
@@ -84,41 +90,34 @@ export function createUsernameCheckers(): UsernameChecker[] {
       (u) => `subdomain=${u.toLowerCase()}`,
       USER_AGENTS.opera,
     ),
-    new ContentMarkerAbsenceChecker(
-      'Reddit',
-      (u) => `https://www.reddit.com/user/${u}`,
-      () => 'Dive into anything',
-    ),
+    // Reddit's frontend is now a client-rendered SPA (shreddit); the raw
+    // server HTML no longer contains "Dive into anything" - or any other
+    // distinguishing text - for either a real or a made-up username, and
+    // its .json API blocks non-browser requests outright. Unreliable.
+    new UnreliableChecker('Reddit', (u) => `https://www.reddit.com/user/${u}`),
     new HttpStatusNotFoundChecker(
       'Pikabu',
       (u) => `http://pikabu.ru/@${u}`,
       (u) => `http://pikabu.ru/@${u}`,
       USER_AGENTS.generic,
     ),
-    new HttpStatusNotFoundChecker(
-      'VK',
-      (u) => `https://m.vk.com/${u}`,
-      (u) => `https://vk.com/${u}`,
-      USER_AGENTS.generic,
-    ),
-    new HttpStatusNotFoundChecker(
-      'TikTok',
-      (u) => `https://www.tiktok.com/@${u}`,
-      (u) => `https://www.tiktok.com/@${u}`,
-      USER_AGENTS.generic,
-    ),
-    new HttpStatusOkOnlyChecker(
+    // m.vk.com serves the same generic (unauthenticated) shell page for a
+    // real profile and a made-up one alike - 200 OK with an identical
+    // <title> either way. Unreliable.
+    new UnreliableChecker('VK', (u) => `https://vk.com/${u}`),
+    // TikTok returns a byte-for-byte identical anti-bot challenge page
+    // (200 OK) for every non-browser request, regardless of username.
+    // Unreliable.
+    new UnreliableChecker('TikTok', (u) => `https://www.tiktok.com/@${u}`),
+    // Pinterest's profile page is a client-rendered SPA shell - 200 OK for
+    // both a real and a made-up username. Unreliable.
+    new UnreliableChecker(
       'Pinterest',
       (u) => `https://www.pinterest.com/${u}/_saved/`,
-      (u) => `https://www.pinterest.com/${u}/_saved/`,
-      USER_AGENTS.generic,
     ),
-    new HttpStatusNotFoundChecker(
-      'Twitch',
-      (u) => `https://m.twitch.tv/${u}?desktop-redirect=true`,
-      (u) => `https://m.twitch.tv/${u}`,
-      USER_AGENTS.generic,
-    ),
+    // m.twitch.tv also returns the same 200 OK SPA shell for both a real
+    // channel and a made-up one. Unreliable.
+    new UnreliableChecker('Twitch', (u) => `https://m.twitch.tv/${u}`),
     new HttpStatusOkOnlyChecker(
       'YouTube',
       (u) => `https://www.youtube.com/user/${u}`,
@@ -149,11 +148,13 @@ export function createUsernameCheckers(): UsernameChecker[] {
       (u) => `https://www.patreon.com/${u}/creators`,
       USER_AGENTS.opera,
     ),
-    new HttpStatusNotFoundChecker(
+    // open.spotify.com/user/<name> redirects to the same regional
+    // "why-not-available" page (200 OK) for the real "spotify" account and
+    // for a made-up username alike - it's a region block, unrelated to
+    // whether the profile exists. Unreliable.
+    new UnreliableChecker(
       'Spotify',
       (u) => `https://open.spotify.com/user/${u}`,
-      (u) => `https://open.spotify.com/user/${u}`,
-      USER_AGENTS.generic,
     ),
     new HttpStatusNotFoundChecker(
       'YandexMusic',
@@ -161,27 +162,35 @@ export function createUsernameCheckers(): UsernameChecker[] {
       (u) => `https://music.yandex.ru/users/${u}/playlists`,
       USER_AGENTS.generic,
     ),
-    new ContentMarkerAbsenceChecker(
+    // The ": 404" marker is gone from market.yandex.ru's current (SPA)
+    // markup - a made-up username's page comes back as a generic,
+    // unindexed shell (empty og:description, "noindex, nofollow") rather
+    // than containing that string, so absence-of-marker now means FOUND
+    // for virtually anything. No verified replacement marker was found.
+    // Unreliable.
+    new UnreliableChecker(
       'YandexMarket',
       (u) => `https://market.yandex.ru/user/${u}/reviews`,
-      () => ': 404',
     ),
-    new HttpStatusNotFoundChecker(
-      'YandexZen',
-      (u) => `https://zen.yandex.com/${u}`,
-      (u) => `https://zen.yandex.com/${u}`,
-      USER_AGENTS.generic,
-    ),
+    // zen.yandex.com now redirects every profile request - real or
+    // made-up - to a Yandex Passport login/captcha wall (200 OK). Viewing
+    // a profile requires being logged in, so an anonymous request can't
+    // tell existing and non-existing usernames apart. Unreliable.
+    new UnreliableChecker('YandexZen', (u) => `https://zen.yandex.com/${u}`),
     new HttpStatusNotFoundChecker(
       'SoundCloud',
       (u) => `https://soundcloud.com/${u}`,
       (u) => `https://soundcloud.com/${u}`,
       USER_AGENTS.androidMobile,
     ),
+    // eBay's old "Profile - error" marker is gone from the current
+    // profilenode markup; a missing profile now renders a
+    // "Sorry, this user was not found." status message instead (verified
+    // against a made-up username and against the real "ebay" account).
     new ContentMarkerAbsenceChecker(
       'Ebay',
       (u) => `https://www.ebay.com/usr/${u}`,
-      () => 'Profile - error',
+      () => 'Sorry, this user was not found.',
     ),
     new ContentMarkerPresenceChecker(
       'PayPal',
@@ -207,7 +216,7 @@ export function createUsernameCheckers(): UsernameChecker[] {
       (u) => `https://rt.pornhub.com/users/${u}`,
       USER_AGENTS.generic,
     ),
-    new AlwaysFoundChecker(
+    new SearchLinkChecker(
       'ArchiveIs',
       (u) => `http://archive.is/search/?text=${u}`,
     ),
@@ -217,11 +226,12 @@ export function createUsernameCheckers(): UsernameChecker[] {
       (u) => `https://www.flickr.com/people/${u}/`,
       USER_AGENTS.opera,
     ),
-    new HttpStatusNotFoundChecker(
+    // slideshare.net now returns 451 (Unavailable For Legal Reasons) for
+    // profile pages regardless of username - a legal/geo block unrelated
+    // to whether the account exists, and not a 404. Unreliable.
+    new UnreliableChecker(
       'SlideShare',
       (u) => `https://www.slideshare.net/${u}`,
-      (u) => `https://www.slideshare.net/${u}`,
-      USER_AGENTS.opera,
     ),
     new HttpStatusOkOnlyChecker(
       'FanPop',
@@ -256,11 +266,13 @@ export function createUsernameCheckers(): UsernameChecker[] {
       (u) => `https://www.last.fm/user/${u}`,
       USER_AGENTS.generic,
     ),
-    new HttpStatusOkOnlyChecker(
+    // eyeem.com now unconditionally 301-redirects every profile URL to
+    // freepik.com/photos (a generic page, unrelated to the username) -
+    // the site migrated wholesale to Freepik and no longer has per-user
+    // profile pages at all. Unreliable.
+    new UnreliableChecker(
       'EyeEm',
       (u) => `https://www.eyeem.com/u/${u}/photos`,
-      (u) => `https://www.eyeem.com/u/${u}/photos`,
-      USER_AGENTS.generic,
     ),
     new HttpStatusOkOnlyChecker(
       'Disqus',

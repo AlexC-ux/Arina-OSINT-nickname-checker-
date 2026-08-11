@@ -32,14 +32,14 @@ export class RedirectUrlMarkerChecker implements UsernameChecker {
       const found = !finalUrl.includes(this._buildNotFoundMarker(username));
       return {
         service: this.service,
-        found,
+        status: found ? 'found' : 'not_found',
         url: found ? this._buildDisplayUrl(username) : undefined,
       };
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       return {
         service: this.service,
-        found: false,
+        status: 'not_found',
         silent: true,
         rawMessage: message.includes(' ') ? message : undefined,
       };

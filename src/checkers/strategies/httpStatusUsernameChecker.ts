@@ -25,7 +25,7 @@ export abstract class HttpStatusUsernameChecker implements UsernameChecker {
       const found = this.isFound(status);
       return {
         service: this.service,
-        found,
+        status: found ? 'found' : 'not_found',
         url: found ? this.buildDisplayUrl(username) : undefined,
       };
     } catch (error) {
@@ -39,6 +39,6 @@ export abstract class HttpStatusUsernameChecker implements UsernameChecker {
     _error: unknown,
     _username: string,
   ): UsernameCheckResult {
-    return { service: this.service, found: false };
+    return { service: this.service, status: 'not_found' };
   }
 }

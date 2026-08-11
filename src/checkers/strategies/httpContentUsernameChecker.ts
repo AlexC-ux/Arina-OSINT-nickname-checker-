@@ -23,9 +23,13 @@ export abstract class HttpContentUsernameChecker implements UsernameChecker {
     try {
       const body = await fetchBody(url, this.userAgent);
       const found = this.isFound(body, this.buildMarker(username));
-      return { service: this.service, found, url: found ? url : undefined };
+      return {
+        service: this.service,
+        status: found ? 'found' : 'not_found',
+        url: found ? url : undefined,
+      };
     } catch {
-      return { service: this.service, found: false };
+      return { service: this.service, status: 'not_found' };
     }
   }
 
