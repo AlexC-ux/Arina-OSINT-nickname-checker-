@@ -18,26 +18,54 @@
 
 ### Доступные сервисы
 
-Всего поддерживается **42 сервиса**:
+Всего поддерживается **42 сервиса**. Для каждого проверяется, существует ли страница/профиль с введённым никнеймом по указанному адресу:
 
-| # | Сервис | # | Сервис | # | Сервис |
-|---|--------|---|--------|---|--------|
-| 1 | GitHub | 15 | TikTok | 29 | PayPal |
-| 2 | Steam | 16 | Pinterest | 30 | Wikipedia |
-| 3 | Telegram | 17 | Twitch | 31 | HubPages |
-| 4 | Akniga | 18 | YouTube | 32 | PornHub |
-| 5 | MySpace | 19 | Vimeo | 33 | Archive.is |
-| 6 | Blogger | 20 | Facebook | 34 | Flickr |
-| 7 | About.me | 21 | Habr | 35 | SlideShare |
-| 8 | Gravatar | 22 | Patreon | 36 | FanPop |
-| 9 | Jimdo | 23 | Spotify | 37 | TenChat |
-| 10 | Tumblr | 24 | Yandex Music | 38 | Buy Me a Coffee |
-| 11 | WordPress | 25 | Yandex Market | 39 | 9GAG |
-| 12 | Reddit | 26 | Yandex Zen | 40 | Last.fm |
-| 13 | Pikabu | 27 | SoundCloud | 41 | EyeEm |
-| 14 | ВКонтакте (VK) | 28 | Ebay | 42 | Disqus |
+| # | Сервис | Описание | Что проверяется |
+|---|--------|----------|------------------|
+| 1 | GitHub | Хостинг репозиториев и совместная разработка кода | `github.com/<ник>` |
+| 2 | Steam | Платформа цифровой дистрибуции игр | `steamcommunity.com/id/<ник>` |
+| 3 | Telegram | Мессенджер | `t.me/<ник>` |
+| 4 | Akniga | Сайт аудиокниг | `akniga.org/profile/<ник>` |
+| 5 | MySpace | Социальная сеть | `myspace.com/<ник>` |
+| 6 | Blogger | Блог-платформа от Google | `<ник>.blogspot.com` |
+| 7 | About.me | Персональные визитки-страницы | `about.me/<ник>` |
+| 8 | Gravatar | Сервис глобальных аватаров | `en.gravatar.com/<ник>` |
+| 9 | Jimdo | Конструктор сайтов | `<ник>.jimdofree.com` |
+| 10 | Tumblr | Блог-платформа/микроблоги | `<ник>.tumblr.com` |
+| 11 | WordPress | Платформа для блогов и сайтов | `<ник>.wordpress.com` |
+| 12 | Reddit | Форумы и агрегатор новостей | `reddit.com/user/<ник>` |
+| 13 | Pikabu | Российская развлекательная площадка | `pikabu.ru/@<ник>` |
+| 14 | ВКонтакте (VK) | Социальная сеть | `vk.com/<ник>` |
+| 15 | TikTok | Платформа коротких видео | `tiktok.com/@<ник>` |
+| 16 | Pinterest | Подборки изображений/идей | `pinterest.com/<ник>` |
+| 17 | Twitch | Стриминговая платформа | `twitch.tv/<ник>` |
+| 18 | YouTube | Видеохостинг | `youtube.com/user/<ник>` |
+| 19 | Vimeo | Видеохостинг | `vimeo.com/<ник>` |
+| 20 | Facebook | Социальная сеть | `facebook.com/<ник>` |
+| 21 | Habr | IT-сообщество и блог-платформа | `habr.com/ru/users/<ник>` |
+| 22 | Patreon | Платформа поддержки авторов (донаты) | `patreon.com/<ник>` |
+| 23 | Spotify | Музыкальный стриминг | `open.spotify.com/user/<ник>` |
+| 24 | Yandex Music | Музыкальный сервис Яндекса | `music.yandex.ru/users/<ник>` |
+| 25 | Yandex Market | Маркетплейс Яндекса | `market.yandex.ru/user/<ник>` |
+| 26 | Yandex Zen | Платформа блогов/статей Яндекса | `zen.yandex.com/<ник>` |
+| 27 | SoundCloud | Платформа для музыки и подкастов | `soundcloud.com/<ник>` |
+| 28 | Ebay | Торговая площадка/аукцион | `ebay.com/usr/<ник>` |
+| 29 | PayPal | Платёжная система (PayPal.Me) | `paypal.com/paypalme/<ник>` |
+| 30 | Wikipedia (ru) | Онлайн-энциклопедия | `ru.wikipedia.org/wiki/Участник:<ник>` |
+| 31 | HubPages | Платформа для авторских статей | `hubpages.com/@<ник>` |
+| 32 | PornHub | Видеохостинг для взрослых | `rt.pornhub.com/users/<ник>` |
+| 33 | Archive.is | Архив веб-страниц | `archive.is/search/?text=<ник>` |
+| 34 | Flickr | Фотохостинг | `flickr.com/people/<ник>` |
+| 35 | SlideShare | Хостинг презентаций и документов | `slideshare.net/<ник>` |
+| 36 | FanPop | Фан-сообщества по интересам | `fanpop.com/fans/<ник>` |
+| 37 | TenChat | Российская деловая социальная сеть | `tenchat.ru/<ник>` |
+| 38 | Buy Me a Coffee | Платформа донатов для авторов | `buymeacoffee.com/<ник>` |
+| 39 | 9GAG | Развлекательный сайт с мемами | `9gag.com/u/<ник>` |
+| 40 | Last.fm | Музыкальный сервис/трекер прослушиваний | `last.fm/user/<ник>` |
+| 41 | EyeEm | Фотохостинг и сообщество фотографов | `eyeem.com/u/<ник>` |
+| 42 | Disqus | Система комментариев для сайтов | `disqus.com/by/<ник>` |
 
-Полный и всегда актуальный список формируется в [`src/checkers/registry.ts`](src/checkers/registry.ts).
+Полный и всегда актуальный список формируется в [`src/checkers/registry.ts`](src/checkers/registry.ts) — при желании там же можно посмотреть точную логику проверки для каждого сервиса (по HTTP-статусу, маркеру в контенте страницы или итоговому URL после редиректа).
 
 ### Режимы работы
 
@@ -174,26 +202,54 @@ How it works: for the given username, the tool sequentially queries every suppor
 
 ### Available services
 
-**42 services** are currently supported:
+**42 services** are currently supported. For each one, the tool checks whether a page/profile with the given username exists at the listed address:
 
-| # | Service | # | Service | # | Service |
-|---|---------|---|---------|---|---------|
-| 1 | GitHub | 15 | TikTok | 29 | PayPal |
-| 2 | Steam | 16 | Pinterest | 30 | Wikipedia |
-| 3 | Telegram | 17 | Twitch | 31 | HubPages |
-| 4 | Akniga | 18 | YouTube | 32 | PornHub |
-| 5 | MySpace | 19 | Vimeo | 33 | Archive.is |
-| 6 | Blogger | 20 | Facebook | 34 | Flickr |
-| 7 | About.me | 21 | Habr | 35 | SlideShare |
-| 8 | Gravatar | 22 | Patreon | 36 | FanPop |
-| 9 | Jimdo | 23 | Spotify | 37 | TenChat |
-| 10 | Tumblr | 24 | Yandex Music | 38 | Buy Me a Coffee |
-| 11 | WordPress | 25 | Yandex Market | 39 | 9GAG |
-| 12 | Reddit | 26 | Yandex Zen | 40 | Last.fm |
-| 13 | Pikabu | 27 | SoundCloud | 41 | EyeEm |
-| 14 | VKontakte (VK) | 28 | Ebay | 42 | Disqus |
+| # | Service | Description | What's checked |
+|---|---------|--------------|-----------------|
+| 1 | GitHub | Code hosting and collaborative development | `github.com/<username>` |
+| 2 | Steam | Digital video game distribution platform | `steamcommunity.com/id/<username>` |
+| 3 | Telegram | Messaging app | `t.me/<username>` |
+| 4 | Akniga | Audiobooks website | `akniga.org/profile/<username>` |
+| 5 | MySpace | Social network | `myspace.com/<username>` |
+| 6 | Blogger | Google's blogging platform | `<username>.blogspot.com` |
+| 7 | About.me | Personal bio/landing pages | `about.me/<username>` |
+| 8 | Gravatar | Global avatar service | `en.gravatar.com/<username>` |
+| 9 | Jimdo | Website builder | `<username>.jimdofree.com` |
+| 10 | Tumblr | Blogging/microblogging platform | `<username>.tumblr.com` |
+| 11 | WordPress | Blogging and website platform | `<username>.wordpress.com` |
+| 12 | Reddit | Forums and news aggregator | `reddit.com/user/<username>` |
+| 13 | Pikabu | Russian entertainment/community site | `pikabu.ru/@<username>` |
+| 14 | VKontakte (VK) | Social network | `vk.com/<username>` |
+| 15 | TikTok | Short-video platform | `tiktok.com/@<username>` |
+| 16 | Pinterest | Image/idea boards | `pinterest.com/<username>` |
+| 17 | Twitch | Live streaming platform | `twitch.tv/<username>` |
+| 18 | YouTube | Video hosting | `youtube.com/user/<username>` |
+| 19 | Vimeo | Video hosting | `vimeo.com/<username>` |
+| 20 | Facebook | Social network | `facebook.com/<username>` |
+| 21 | Habr | IT community and blogging platform | `habr.com/ru/users/<username>` |
+| 22 | Patreon | Creator support/donation platform | `patreon.com/<username>` |
+| 23 | Spotify | Music streaming | `open.spotify.com/user/<username>` |
+| 24 | Yandex Music | Yandex's music streaming service | `music.yandex.ru/users/<username>` |
+| 25 | Yandex Market | Yandex's marketplace | `market.yandex.ru/user/<username>` |
+| 26 | Yandex Zen | Yandex's blogging/articles platform | `zen.yandex.com/<username>` |
+| 27 | SoundCloud | Music and podcast platform | `soundcloud.com/<username>` |
+| 28 | Ebay | Online marketplace/auctions | `ebay.com/usr/<username>` |
+| 29 | PayPal | Payment system (PayPal.Me) | `paypal.com/paypalme/<username>` |
+| 30 | Wikipedia (ru) | Online encyclopedia | `ru.wikipedia.org/wiki/Участник:<username>` |
+| 31 | HubPages | Platform for author articles | `hubpages.com/@<username>` |
+| 32 | PornHub | Adult video hosting | `rt.pornhub.com/users/<username>` |
+| 33 | Archive.is | Web page archive | `archive.is/search/?text=<username>` |
+| 34 | Flickr | Photo hosting | `flickr.com/people/<username>` |
+| 35 | SlideShare | Presentation/document hosting | `slideshare.net/<username>` |
+| 36 | FanPop | Fan communities | `fanpop.com/fans/<username>` |
+| 37 | TenChat | Russian business social network | `tenchat.ru/<username>` |
+| 38 | Buy Me a Coffee | Creator donation platform | `buymeacoffee.com/<username>` |
+| 39 | 9GAG | Meme/entertainment site | `9gag.com/u/<username>` |
+| 40 | Last.fm | Music service/listening tracker | `last.fm/user/<username>` |
+| 41 | EyeEm | Photo hosting and photographer community | `eyeem.com/u/<username>` |
+| 42 | Disqus | Comment system for websites | `disqus.com/by/<username>` |
 
-The full, always up-to-date list lives in [`src/checkers/registry.ts`](src/checkers/registry.ts).
+The full, always up-to-date list lives in [`src/checkers/registry.ts`](src/checkers/registry.ts) — it also contains the exact check logic used for each service (HTTP status code, a content marker on the page, or the final URL after a redirect).
 
 ### Modes
 
