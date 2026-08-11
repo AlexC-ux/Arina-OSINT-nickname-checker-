@@ -142,6 +142,12 @@ export function createUsernameCheckers(): UsernameChecker[] {
       (u) => `https://habr.com/ru/users/${u}/`,
       USER_AGENTS.generic,
     ),
+    new HttpStatusNotFoundChecker(
+      'HabrCareer',
+      (u) => `https://career.habr.com/${u}`,
+      (u) => `https://career.habr.com/${u}`,
+      USER_AGENTS.generic,
+    ),
     new PatreonChecker(
       'Patreon',
       (u) => `https://www.patreon.com/${u}/creators`,
@@ -172,11 +178,23 @@ export function createUsernameCheckers(): UsernameChecker[] {
       'YandexMarket',
       (u) => `https://market.yandex.ru/user/${u}/reviews`,
     ),
-    // zen.yandex.com now redirects every profile request - real or
-    // made-up - to a Yandex Passport login/captcha wall (200 OK). Viewing
-    // a profile requires being logged in, so an anonymous request can't
-    // tell existing and non-existing usernames apart. Unreliable.
-    new UnreliableChecker('YandexZen', (u) => `https://zen.yandex.com/${u}`),
+    // dzen.ru/user/<id> returns 200 for an existing profile and 404 (or a
+    // 302 to Yandex Passport for a made-up one) when the user does not
+    // exist. Redirects must not be followed, or a missing profile's SSO
+    // redirect would look like a 200 OK login page.
+    new HttpStatusOkOnlyChecker(
+      'Dzen',
+      (u) => `https://dzen.ru/user/${u}`,
+      (u) => `https://dzen.ru/user/${u}`,
+      USER_AGENTS.generic,
+      'manual',
+    ),
+    new ContentMarkerPresenceChecker(
+      'YandexQuestions',
+      (u) => `https://yandex.ru/q/profile/${u}/`,
+      () => '— Яндекс Кью</title>',
+      USER_AGENTS.generic,
+    ),
     new HttpStatusNotFoundChecker(
       'SoundCloud',
       (u) => `https://soundcloud.com/${u}`,

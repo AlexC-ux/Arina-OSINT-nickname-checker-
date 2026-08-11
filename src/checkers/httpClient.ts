@@ -16,8 +16,13 @@ async function request(url: string, userAgent?: string): Promise<Response> {
 export async function fetchStatus(
   url: string,
   userAgent?: string,
+  redirect: RequestRedirect = 'follow',
 ): Promise<number> {
-  const response = await request(url, userAgent);
+  const response = await fetch(url, {
+    headers: buildHeaders(userAgent),
+    redirect,
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+  });
   return response.status;
 }
 

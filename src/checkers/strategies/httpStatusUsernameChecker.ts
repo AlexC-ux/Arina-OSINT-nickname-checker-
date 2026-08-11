@@ -14,6 +14,7 @@ export abstract class HttpStatusUsernameChecker implements UsernameChecker {
     protected readonly buildCheckUrl: (username: string) => string,
     protected readonly buildDisplayUrl: (username: string) => string,
     protected readonly userAgent?: string,
+    protected readonly redirect: RequestRedirect = 'follow',
   ) {}
 
   public async check(username: string): Promise<UsernameCheckResult> {
@@ -21,6 +22,7 @@ export abstract class HttpStatusUsernameChecker implements UsernameChecker {
       const status = await fetchStatus(
         this.buildCheckUrl(username),
         this.userAgent,
+        this.redirect,
       );
       const found = this.isFound(status);
       return {
