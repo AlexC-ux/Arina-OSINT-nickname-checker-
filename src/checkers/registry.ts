@@ -298,5 +298,79 @@ export function createUsernameCheckers(): UsernameChecker[] {
       (u) => `https://disqus.com/by/${u}/`,
       USER_AGENTS.generic,
     ),
+    new HttpStatusNotFoundChecker(
+      'RemoteOk',
+      (u) => `https://remoteok.com/@${u}`,
+      (u) => `https://remoteok.com/@${u}`,
+      USER_AGENTS.generic,
+    ),
+    new HttpStatusNotFoundChecker(
+      'Drive2',
+      (u) => `https://www.drive2.ru/users/${u}/`,
+      (u) => `https://www.drive2.ru/users/${u}/`,
+      USER_AGENTS.generic,
+    ),
+    // shedevrum.ai may 307 to Yandex Passport for anonymous clients; when
+    // the profile response is reachable, a missing user returns 404.
+    new HttpStatusNotFoundChecker(
+      'YandexShedevrum',
+      (u) => `https://shedevrum.ai/profile/${u}/`,
+      (u) => `https://shedevrum.ai/profile/${u}/`,
+      USER_AGENTS.generic,
+    ),
+    new HttpStatusNotFoundChecker(
+      'CodePen',
+      (u) => `https://codepen.io/${u}`,
+      (u) => `https://codepen.io/${u}`,
+      USER_AGENTS.generic,
+    ),
+    new HttpStatusNotFoundChecker(
+      'OpenSea',
+      (u) => `https://opensea.io/${u}?tab=activity`,
+      (u) => `https://opensea.io/${u}?tab=activity`,
+      USER_AGENTS.generic,
+    ),
+    new HttpStatusNotFoundChecker(
+      '3DToday',
+      (u) => `https://3dtoday.ru/blogs/${u}`,
+      (u) => `https://3dtoday.ru/blogs/${u}`,
+      USER_AGENTS.generic,
+    ),
+    new HttpStatusNotFoundChecker(
+      'Dribbble',
+      (u) => `https://dribbble.com/${u}`,
+      (u) => `https://dribbble.com/${u}`,
+      USER_AGENTS.generic,
+    ),
+    new HttpStatusNotFoundChecker(
+      'Workana',
+      (u) => `https://www.workana.com/job/${u}`,
+      (u) => `https://www.workana.com/job/${u}`,
+      USER_AGENTS.generic,
+    ),
+    new HttpStatusNotFoundChecker(
+      'Teletype',
+      (u) => `https://teletype.in/@${u}`,
+      (u) => `https://teletype.in/@${u}`,
+      USER_AGENTS.generic,
+    ),
+    new HttpStatusNotFoundChecker(
+      'MyMail',
+      (u) => `https://my.mail.ru/mail/${u}/`,
+      (u) => `https://my.mail.ru/mail/${u}/`,
+      USER_AGENTS.generic,
+    ),
+    new HttpStatusNotFoundChecker(
+      'PiFyi',
+      (u) => `https://www.pi.fyi/u/${u}`,
+      (u) => `https://www.pi.fyi/u/${u}`,
+      USER_AGENTS.generic,
+    ),
+    new HttpStatusNotFoundChecker(
+      'NdbxTwitch',
+      (u) => `https://ndbx.ru/twitch/${u}`,
+      (u) => `https://ndbx.ru/twitch/${u}`,
+      USER_AGENTS.generic,
+    ),
   ];
 }

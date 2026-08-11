@@ -18,7 +18,7 @@
 
 ### Доступные сервисы
 
-Всего поддерживается **44 сервиса**. Для каждого проверяется, существует ли страница/профиль с введённым никнеймом по указанному адресу:
+Всего поддерживается **56 сервисов**. Для каждого проверяется, существует ли страница/профиль с введённым никнеймом по указанному адресу:
 
 | # | Сервис | Описание | Что проверяется |
 |---|--------|----------|------------------|
@@ -66,6 +66,18 @@
 | 42 | Last.fm | Музыкальный сервис/трекер прослушиваний | `last.fm/user/<ник>` |
 | 43 | EyeEm | Фотохостинг и сообщество фотографов | `eyeem.com/u/<ник>` |
 | 44 | Disqus | Система комментариев для сайтов | `disqus.com/by/<ник>` |
+| 45 | RemoteOK | Доска удалённых вакансий | `remoteok.com/@<ник>` |
+| 46 | Drive2 | Сообщество автовладельцев | `drive2.ru/users/<ник>` |
+| 47 | Yandex Shedevrum | Генерация изображений нейросетями Яндекса | `shedevrum.ai/profile/<ник>` |
+| 48 | CodePen | Песочница для фронтенд-кода | `codepen.io/<ник>` |
+| 49 | OpenSea | NFT-маркетплейс | `opensea.io/<ник>?tab=activity` |
+| 50 | 3DToday | Сообщество 3D-печати и блоги | `3dtoday.ru/blogs/<ник>` |
+| 51 | Dribbble | Портфолио дизайнеров | `dribbble.com/<ник>` |
+| 52 | Workana | Фриланс-площадка | `workana.com/job/<ник>` |
+| 53 | Teletype | Платформа для публикаций | `teletype.in/@<ник>` |
+| 54 | My Mail | Профили Mail.ru | `my.mail.ru/mail/<ник>` |
+| 55 | Pi.fyi | Короткие ссылки / профили | `pi.fyi/u/<ник>` |
+| 56 | Ndbx Twitch | Профили Twitch на ndbx.ru | `ndbx.ru/twitch/<ник>` |
 
 Полный и всегда актуальный список формируется в [`src/checkers/registry.ts`](src/checkers/registry.ts) — при желании там же можно посмотреть точную логику проверки для каждого сервиса (по HTTP-статусу, маркеру в контенте страницы или итоговому URL после редиректа).
 
@@ -204,7 +216,7 @@ How it works: for the given username, the tool sequentially queries every suppor
 
 ### Available services
 
-**44 services** are currently supported. For each one, the tool checks whether a page/profile with the given username exists at the listed address:
+**56 services** are currently supported. For each one, the tool checks whether a page/profile with the given username exists at the listed address:
 
 | # | Service | Description | What's checked |
 |---|---------|--------------|-----------------|
@@ -252,6 +264,18 @@ How it works: for the given username, the tool sequentially queries every suppor
 | 42 | Last.fm | Music service/listening tracker | `last.fm/user/<username>` |
 | 43 | EyeEm | Photo hosting and photographer community | `eyeem.com/u/<username>` |
 | 44 | Disqus | Comment system for websites | `disqus.com/by/<username>` |
+| 45 | RemoteOK | Remote job board | `remoteok.com/@<username>` |
+| 46 | Drive2 | Car owners community | `drive2.ru/users/<username>` |
+| 47 | Yandex Shedevrum | Yandex AI image generation profiles | `shedevrum.ai/profile/<username>` |
+| 48 | CodePen | Front-end code playground | `codepen.io/<username>` |
+| 49 | OpenSea | NFT marketplace | `opensea.io/<username>?tab=activity` |
+| 50 | 3DToday | 3D printing community blogs | `3dtoday.ru/blogs/<username>` |
+| 51 | Dribbble | Designer portfolio community | `dribbble.com/<username>` |
+| 52 | Workana | Freelance marketplace | `workana.com/job/<username>` |
+| 53 | Teletype | Publishing platform | `teletype.in/@<username>` |
+| 54 | My Mail | Mail.ru profiles | `my.mail.ru/mail/<username>` |
+| 55 | Pi.fyi | Short-link / profile pages | `pi.fyi/u/<username>` |
+| 56 | Ndbx Twitch | Twitch profiles on ndbx.ru | `ndbx.ru/twitch/<username>` |
 
 The full, always up-to-date list lives in [`src/checkers/registry.ts`](src/checkers/registry.ts) — it also contains the exact check logic used for each service (HTTP status code, a content marker on the page, or the final URL after a redirect).
 
