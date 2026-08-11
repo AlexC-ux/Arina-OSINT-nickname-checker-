@@ -1,2 +1,0 @@
-C:\Users\AlexC-ux\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\publish\Arina.pdb
-C:\Users\AlexC-ux\source\repos\Arina\Arina\bin\Release\netcoreapp3.1\publish\Arina
